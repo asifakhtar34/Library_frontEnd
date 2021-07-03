@@ -1,0 +1,94 @@
+.navbar {
+    /* border: 2px solid red; */
+    position: absolute;
+    top: 25px;
+    left: 10%;
+    width: 85%;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.topNav {
+    /* border: 2px solid green; */
+    display: flex;
+    color: white;
+}
+
+.topNav .navP {
+    margin: 3px;
+}
+
+.call {
+    display: flex;
+    margin-left: 3%;
+    width: 25%;
+    cursor: pointer;
+}
+
+.call:hover,
+.email:hover,
+.login:hover,
+.register:hover,
+.navTabs li:hover {
+    color: tomato;
+}
+
+.email {
+    display: flex;
+    margin-left: 7px;
+    width: 40%;
+    cursor: pointer;
+}
+
+.login {
+    display: flex;
+    margin-left: 30%;
+    cursor: pointer;
+}
+
+.register {
+    display: flex;
+    cursor: pointer;
+}
+
+.navLink {
+    /* border: 2px solid rgb(248, 215, 248); */
+    background-color: white;
+    display: flex;
+    border-radius: 50px;
+    height: 15vh;
+    /* justify-content: center;
+    align-items: center; */
+}
+
+.navLink .logo {
+    margin-left: 5%;
+}
+
+.navLink a {
+    text-decoration: none;
+}
+
+.navLink a:visited {
+    color: black;
+}
+
+.navLink .navTabs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 55%;
+}
+
+.navTabs li {
+    list-style-type: none;
+    margin-left: 3%;
+    /* border: 2px solid green; */
+    width: 80px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.navTabs .tabs:hover {
+    color: tomato;
+    background-color: rgb(128, 125, 125);
+}

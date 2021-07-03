@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bright-Minds Library</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./landing.css">
+    <link rel="stylesheet" href="./navbar.css">
+    <script src="./header.js" defer></script>
+</head>
+
+<body>
+    <header class="header">
+        <!-- carasoul -->
+        <div class="slideshow-container">
+
+            <div class="mySlides fade">
+
+                <img class="carasoulImg" src="./images/pexels-min-an-694740.jpg">
+                <div class="text ">Caption Text</div>
+            </div>
+
+            <div class="mySlides fade ">
+
+                <img class="carasoulImg" src="./images/pexels-pixabay-207636.jpg ">
+                <div class="text ">Caption Two</div>
+            </div>
+
+            <div class="mySlides fade ">
+
+                <img class="carasoulImg" src="./images/pexels-pixabay-247899.jpg ">
+                <div class="text ">Caption Three</div>
+            </div>
+
+            <a class="prev " onclick="plusSlides(-1) ">&#10094;</a>
+            <a class="next " onclick="plusSlides(1) ">&#10095;</a>
+
+        </div>
+        <br>
+
+        <div style="text-align:center ">
+            <span class="dot " onclick="currentSlide(1) "></span>
+            <span class="dot " onclick="currentSlide(2) "></span>
+            <span class="dot " onclick="currentSlide(3) "></span>
+        </div>
+
+        <!-- navbar -->
+        <div class="navbar">
+            <div class="topNav">
+                <div class="call"><i class="fa fa-phone" style="font-size:24px"></i>
+                    <p class="navP">Call us now: +9088765676</p>
+                </div>
+                <div class="email"><i class="fa fa-envelope-o" style="font-size:24px"></i>
+                    <p class="navP">Email Now: support@brightminds.com</p>
+                </div>
+                <div class="login"><i class="fa fa-lock" style="font-size:24px"></i>
+                    <p class="navP">Login</p>
+                </div>
+                <div class="register"><i class="fa fa-id-card-o" style="font-size:24px"></i>
+                    <p class="navP">Register</p>
+                </div>
+            </div>
+            <div class="navLink">
+                <div class="logo"><img src="./images/logo/logo-removebg-preview.png" alt="" width="180px" height="80px"></div>
+                <ul class="navTabs">
+                    <a href="">
+                        <li class=" tab tab1">Home</li>
+                    </a>
+                    <a href="">
+                        <li class=" tab tab2">Books</li>
+                    </a>
+                    <a href="">
+                        <li class=" tab tab3">Gallery</li>
+                    </a>
+                    <a href="">
+                        <li class=" tab tab4">About Us</li>
+                    </a>
+                    <a href="">
+                        <li class=" tab tab5">CONTACT</li>
+                    </a>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <main class="main "></main>
+    <footer class="footer "></footer>
+
+</body>
+
+</html>
