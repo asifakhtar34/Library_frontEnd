@@ -11,6 +11,8 @@
     /* border: 2px solid green; */
     display: flex;
     color: white;
+    width: auto;
+    box-sizing: content-box;
 }
 
 .topNav .navP {
@@ -28,6 +30,7 @@
 .email:hover,
 .login:hover,
 .register:hover,
+.adminLogin:hover,
 .navTabs li:hover {
     color: tomato;
 }
@@ -48,6 +51,12 @@
 .register {
     display: flex;
     cursor: pointer;
+}
+
+.adminLogin {
+    display: flex;
+    cursor: pointer;
+    width: 70px;
 }
 
 .navLink {
