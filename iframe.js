@@ -55,6 +55,9 @@ window.onload = function fetchProducts() {
                             var xhr = new XMLHttpRequest();
 
                             xhr.open("GET", booksArr[i][1].url, true);
+                            let divCont = document.createElement("div");
+                            divCont.setAttribute("id", "detailsCont");
+                            li.appendChild(divCont);
 
                             xhr.onreadystatechange = function() {
                                 if (this.readyState == 4 && this.status == 200) {
@@ -63,16 +66,20 @@ window.onload = function fetchProducts() {
                                     detailArr.forEach((elem) => {
                                         let div = document.createElement("div");
                                         let p1 = document.createElement("p");
-                                        p1.append(elem[0]);
+                                        p1.append(elem[0].toUpperCase());
                                         let p2 = document.createElement("p");
+                                        // if(typeof elem[1]== "string"){
+                                        //     elem[1].toLocaleUpperCase
+                                        // }
                                         p2.append(elem[1]);
                                         div.appendChild(p1);
                                         div.appendChild(p2);
-                                        li.insertBefore(div, a);
-                                        // let hide = document.createElement('button');
-                                        // hide.append('Hide Details');
-                                        // hide.setAttribute('onclick', 'function hide(){ div.style.display = "block"}');
-                                        // div.appendChild(hide);
+
+                                        divCont.appendChild(div)
+                                            // let hide = document.createElement('button');
+                                            // hide.append('Hide Details');
+                                            // hide.setAttribute('onclick', 'function hide(){ div.style.display = "block"}');
+                                            // div.appendChild(hide);
                                         a.removeEventListener("click", showProdDetails);
                                     });
                                 } else if (this.status == 404 || this.status == 500) {
@@ -80,20 +87,22 @@ window.onload = function fetchProducts() {
                                 }
                             };
                             xhr.send();
+                            li.appendChild(divCont);
                         }
 
                         // appending the a tag to ul
                         li.appendChild(a);
+
 
                         list.appendChild(li);
                     } else {
                         // console.log(booksArr[i])
 
                         let p1 = document.createElement("p");
-                        p1.append(booksArr[i][0]);
+                        p1.append(booksArr[i][0].toUpperCase());
                         p1.classList.add("label");
                         let p2 = document.createElement("p");
-                        p2.append(booksArr[i][1]);
+                        p2.append(booksArr[i][1].toUpperCase());
                         p2.classList.add("value");
 
                         li.appendChild(p1);

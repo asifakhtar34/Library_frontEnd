@@ -7,13 +7,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bright-Minds</title>
     <script src="./control.js" defer></script>
+    <!-- <script src="./getorders.js" defer></script> -->
+    <style>
+        iframe li {
+            border: 2px solid red;
+        }
+        
+        #pass {
+            background-color: rgb(116, 182, 116);
+            text-align: center;
+            letter-spacing: 4px;
+            height: 30px;
+            margin: auto 0;
+            width: 100%;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+        }
+        
+        #fail {
+            background-color: rgb(216, 44, 44);
+            text-align: center;
+            letter-spacing: 4px;
+            height: 30px;
+            margin: auto 0;
+            width: 100%;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+        }
+    </style>
 </head>
 
 <body>
     <button id="refresh" onclick="refreashIframe()">Refresh All products</button>
-    <iframe id="myFrame" style="width: 100%; height: 400px;" src="./product.html"></iframe>
+    <iframe id="myFrame" style="width: 100%; height: 50vh;" src="./product.html"></iframe>
     <!-- <button on>products</button> -->
     <button id="adminLogin">Admin Login</button>
+    <!-- <button id="getProd">get product</button> -->
     <!-- <button id="btn">fetch all products</button> -->
     <!-- <div class="container">
         <h4>All Products</h4>
