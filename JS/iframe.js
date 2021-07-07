@@ -36,7 +36,7 @@ window.onload = function fetchProducts() {
                 // console.log(Object.entries(item))
                 // creating an array of all books bcoz to convert object to array so we can loop
                 let booksArr = Object.entries(item);
-                console.log(booksArr);
+                // console.log(booksArr);
                 //looping through individual product element and appending to list
                 for (let i = 0; i < booksArr.length; i++) {
                     // checking for the request property for setting the link of product details
@@ -61,7 +61,7 @@ window.onload = function fetchProducts() {
 
                             xhr.onreadystatechange = function() {
                                 if (this.readyState == 4 && this.status == 200) {
-                                    console.log(Object.entries(JSON.parse(this.responseText)));
+                                    // console.log(Object.entries(JSON.parse(this.responseText)));
                                     let detailArr = Object.entries(JSON.parse(this.responseText));
                                     detailArr.forEach((elem) => {
                                         let div = document.createElement("div");

@@ -553,7 +553,7 @@ function removeProduct(response, form) {
 
 function resfreshOrders() {
     let refreshOrdersPage = document.createElement("button");
-    refreshOrdersPage.append("Refresh Orders");
+    refreshOrdersPage.append("Refresh Orders/Users");
     refreshOrdersPage.setAttribute("id", "refreshOrders");
     refreshOrdersPage.addEventListener("click", () => {
 
@@ -563,3 +563,15 @@ function resfreshOrders() {
 
 
 }
+// function resfreshOrders() {
+//     let refreshOrdersPage = document.createElement("button");
+//     refreshOrdersPage.append("Refresh Orders");
+//     refreshOrdersPage.setAttribute("id", "refreshOrders");
+//     refreshOrdersPage.addEventListener("click", () => {
+
+//         OIframe.contentWindow.location.reload();
+//     });
+//     adminContainer.appendChild(refreshOrdersPage);
+
+
+// }
