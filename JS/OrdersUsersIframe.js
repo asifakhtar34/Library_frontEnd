@@ -25,11 +25,11 @@ window.onload = function showAllOrders() {
         if (this.readyState == 4 && this.status == 200) {
             //receving all products
             let orders = JSON.parse(this.responseText);
-            console.log(orders);
+            // console.log(orders);
             let ordersCount = orders.count;
             let ordersArr = orders.orders;
             // console.log(ordersCount);
-            console.log(ordersArr);
+            // console.log(ordersArr);
 
             let orderSno = 1;
 
@@ -58,7 +58,7 @@ window.onload = function showAllOrders() {
             //looping through all the orders
             ordersArr.forEach((item) => {
                 let ordersRow = ordersTable.insertRow();
-                console.log(Object.entries(item));
+                // console.log(Object.entries(item));
                 let IndorederArr = Object.entries(item);
 
                 //    inserting orderS.no
@@ -69,11 +69,11 @@ window.onload = function showAllOrders() {
                 //looping through individual orders
                 for (let i = 0; i < IndorederArr.length; i++) {
                     if (i == 0) {
-                        console.log(IndorederArr[i][1]);
+                        // console.log(IndorederArr[i][1]);
                         let orderCell = ordersRow.insertCell();
                         orderCell.innerHTML = IndorederArr[i][1];
                     } else if (i == 1) {
-                        console.log(IndorederArr[i][1]._id);
+                        // console.log(IndorederArr[i][1]._id);
                         //inserting productId in table row
                         let orderCell = ordersRow.insertCell();
                         orderCell.innerHTML = IndorederArr[i][1]._id;
@@ -81,7 +81,7 @@ window.onload = function showAllOrders() {
                         let orderCell1 = ordersRow.insertCell();
                         orderCell1.innerHTML = IndorederArr[i][1].name;
                     } else if (i == 2) {
-                        console.log(IndorederArr[i][1]._id);
+                        // console.log(IndorederArr[i][1]._id);
                         //inserting userID in table row
                         let orderCell = ordersRow.insertCell();
                         orderCell.innerHTML = IndorederArr[i][1]._id;
@@ -112,11 +112,11 @@ window.onload = function showAllOrders() {
         if (this.readyState == 4 && this.status == 200) {
             //receving all products
             let users = JSON.parse(this.responseText);
-            console.log(users);
+            // console.log(users);
 
             let usersArr = users.allUsers;
             // console.log(ordersCount);
-            console.log(usersArr);
+            // console.log(usersArr);
 
             let userSno = 1;
 
@@ -142,7 +142,7 @@ window.onload = function showAllOrders() {
             //looping through all the orders
             usersArr.forEach((item) => {
                 let userRow = usersTable.insertRow();
-                console.log(Object.entries(item));
+                // console.log(Object.entries(item));
                 let InduserArr = Object.entries(item);
 
                 //    inserting orderS.no

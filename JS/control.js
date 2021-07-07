@@ -21,6 +21,7 @@ function adminlogin() {
 }
 // logging out admin
 function adminloggedOut() {
+    localStorage.removeItem("jwt");
     adminIframe.contentWindow.location.reload();
     adminIframe.style.display = "none";
     let p = document.createElement("p");

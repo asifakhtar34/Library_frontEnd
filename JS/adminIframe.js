@@ -14,7 +14,13 @@ let orderContainer = document.createElement("div");
 orderContainer.setAttribute("id", "orderBox");
 document.getElementsByTagName("body")[0].appendChild(orderContainer);
 
+// user container
+let userContainer = document.createElement("div");
+userContainer.setAttribute("id", "userBox");
+document.getElementsByTagName("body")[0].appendChild(userContainer);
+
 orderContainer.style.display = "none";
+userContainer.style.display = "none";
 
 
 
@@ -98,6 +104,10 @@ window.onload = function adminFunc() {
 
                 //after success login show order container
                 orderContainer.style.display = "block";
+
+
+                //after success login show user container
+                userContainer.style.display = "block";
 
 
 
@@ -214,6 +224,7 @@ function addNewProduct(response, form) {
 
             if (name.value == "" || price.value == "" || author.value == "") {
                 let p = document.createElement("p");
+                p.setAttribute("id", "fail");
                 p.append("PLease Fill out All the Fields");
                 productform.appendChild(p);
                 setTimeout(() => {
@@ -326,6 +337,7 @@ function updateProduct(response, form) {
 
             if (prodId.value == "" || property.value == "" || newValue.value == "") {
                 let p = document.createElement("p");
+                p.setAttribute("id", "fail");
                 p.append("PLease Fill out All the Fields");
                 updateForm.appendChild(p);
                 setTimeout(() => {
@@ -423,7 +435,8 @@ function removeProduct(response, form) {
             // form validation
             if (rprodId.value == "") {
                 let p = document.createElement("p");
-                p.append("Please Fill out  Field");
+                p.setAttribute("id", "fail");
+                p.append("Please Fill out All the Fields");
                 removeForm.appendChild(p);
                 setTimeout(() => {
                     removeForm.removeChild(p);
