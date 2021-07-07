@@ -22,6 +22,22 @@ document.getElementsByTagName("body")[0].appendChild(userContainer);
 orderContainer.style.display = "none";
 userContainer.style.display = "none";
 
+//container to store addNewBook
+let addNewBookContainer = document.createElement("div");
+addNewBookContainer.setAttribute("id", "anbc");
+
+//container to store addNewBook
+let updateBookContainer = document.createElement("div");
+addNewBookContainer.setAttribute("id", "ubc");
+
+//container to store addNewBook
+
+let removeBookContainer = document.createElement("div");
+addNewBookContainer.setAttribute("id", "rbc");
+
+
+
+
 
 
 
@@ -39,6 +55,10 @@ window.onload = function adminFunc() {
 
     // Create an input element for emailID
     let ID = document.createElement("input");
+    let idLabel = document.createElement('label');
+    idLabel.append('Enter Email:');
+    idLabel.setAttribute("for", "email");
+
     ID.setAttribute("type", "email");
     ID.setAttribute("name", "email");
     ID.setAttribute("placeholder", "E-Mail ID");
@@ -46,6 +66,9 @@ window.onload = function adminFunc() {
 
     // Create an input element for password
     let PWD = document.createElement("input");
+    let pwdLabel = document.createElement('label');
+    pwdLabel.append('Enter Password:');
+    pwdLabel.setAttribute("for", "password");
     PWD.setAttribute("type", "password");
     PWD.setAttribute("name", "password");
     PWD.setAttribute("placeholder", "Password");
@@ -54,7 +77,7 @@ window.onload = function adminFunc() {
     // Create a submit button
     let s = document.createElement("input");
     s.setAttribute("type", "submit");
-    s.setAttribute("value", "Submit");
+    s.setAttribute("value", "LOGIN");
     s.setAttribute("id", "adminSubmit");
 
     s.addEventListener("click", adminSubmit);
@@ -149,9 +172,12 @@ window.onload = function adminFunc() {
 
     // Append the email_ID input to the form
     form.append(ID);
+    form.insertBefore(idLabel, ID)
 
     // Append the password to the form
     form.append(PWD);
+    form.insertBefore(pwdLabel, PWD)
+
 
     // Append the button to the form
     form.append(s);
@@ -175,13 +201,22 @@ function addNewProduct(response, form) {
     addProduct.addEventListener("click", addProducts);
     // sending xhr request to server for adding new products
     function addProducts() {
+        // this.style.display = "block"
+
+
+
+
+
         let productform = document.createElement("form");
         productform.setAttribute("method", "post");
         productform.setAttribute("action", "#");
-        productform.setAttribute("class", "newBookForm");
+        productform.setAttribute("id", "newBookForm");
 
         // Create an input element for name of book
         let name = document.createElement("input");
+        let namelabel = document.createElement('label');
+        namelabel.append('Enter Book Name:');
+        namelabel.setAttribute("for", "name");
         name.setAttribute("type", "text");
         name.setAttribute("name", "name");
         name.setAttribute("placeholder", "Book Name");
@@ -190,6 +225,9 @@ function addNewProduct(response, form) {
 
         // Create an input element for price
         let price = document.createElement("input");
+        let pricelabel = document.createElement('label');
+        pricelabel.append('Enter Book Price:');
+        pricelabel.setAttribute("for", "price");
         price.setAttribute("type", "number");
         price.setAttribute("name", "price");
         price.setAttribute("placeholder", "price");
@@ -197,6 +235,9 @@ function addNewProduct(response, form) {
 
         // Create an input element for password
         let author = document.createElement("input");
+        let authorlabel = document.createElement('label');
+        authorlabel.append('Enter Author:');
+        authorlabel.setAttribute("for", "author");
         author.setAttribute("type", "text");
         author.setAttribute("name", "author");
         author.setAttribute("placeholder", "Author");
@@ -261,20 +302,48 @@ function addNewProduct(response, form) {
 
         // Append the name input to the form
         productform.append(name);
+        productform.insertBefore(namelabel, name);
 
         // Append the price to the form
         productform.append(price);
+        productform.insertBefore(pricelabel, price);
 
         // Append the author to the form
         productform.append(author);
+        productform.insertBefore(authorlabel, author);
 
         // Append the submit to the form
         productform.append(s);
 
         adminContainer.appendChild(productform);
+
+        let o = document.getElementsByTagName("form");
+        let oArr = Array.from(o);
+
+
+        oArr.forEach((item) => {
+            item.parentNode.removeChild(item)
+            console.log(item)
+        })
+        adminContainer.appendChild(productform);
+
+
+
+        // let o = document.getElementsByTagName("form");
+
+        // for (let i = 0; i < o.length; i++) {
+        //     o[i].style.display = "none"
+
+        // }
+
+        // document.getElementById('newBookForm').style.display = "block";
+
+
+
+
         // adminContainer.appendChild(refresh);
         console.log("am clicked");
-        addProduct.removeEventListener("click", addProducts);
+        // addProduct.removeEventListener("click", addProducts);
     }
     adminContainer.appendChild(addProduct);
 }
@@ -296,6 +365,9 @@ function updateProduct(response, form) {
 
         // Create an input element for name of book
         let prodId = document.createElement("input");
+        let prodIdlabel = document.createElement('label');
+        prodIdlabel.append('Enter ProductID:');
+        prodIdlabel.setAttribute("for", "prodId");
         prodId.setAttribute("type", "text");
         prodId.setAttribute("name", "prodId");
         prodId.setAttribute("placeholder", "Product ID");
@@ -304,6 +376,9 @@ function updateProduct(response, form) {
 
         // Create an input element for price
         let property = document.createElement("input");
+        let propertylabel = document.createElement('label');
+        propertylabel.append('What to change?:');
+        propertylabel.setAttribute("for", "property");
         property.setAttribute("type", "text");
         property.setAttribute("name", "property");
         property.setAttribute("placeholder", "What you want to change");
@@ -311,6 +386,9 @@ function updateProduct(response, form) {
 
         // Create an input element for password
         let newValue = document.createElement("input");
+        let newValuelabel = document.createElement('label');
+        newValue.append('Enter New Value:');
+        newValue.setAttribute("for", "newValue");
         newValue.setAttribute("type", "text");
         newValue.setAttribute("name", "newValue");
         newValue.setAttribute("placeholder", "New value");
@@ -374,20 +452,45 @@ function updateProduct(response, form) {
 
         // Append the name input to the form
         updateForm.append(prodId);
+        updateForm.insertBefore(prodIdlabel, prodId);
 
         // Append the price to the form
         updateForm.append(property);
+        updateForm.insertBefore(propertylabel, property);
 
         // Append the author to the form
         updateForm.append(newValue);
+        updateForm.insertBefore(newValuelabel, newValue);
 
         // Append the submit to the form
         updateForm.append(s);
 
         adminContainer.appendChild(updateForm);
+
+        let o = document.getElementsByTagName("form");
+        let oArr = Array.from(o);
+
+
+        oArr.forEach((item) => {
+            item.parentNode.removeChild(item)
+            console.log(item)
+        })
+
+        adminContainer.appendChild(updateForm);
+
+        // let o = document.getElementsByTagName("form");
+
+        // for (let i = 0; i < o.length; i++) {
+        //     o[i].style.display = "none"
+
+        // }
+
+        // document.getElementById('updateForm').style.display = "block";
+
+
         // document.getElementsByTagName("body")[0].appendChild(refresh);
         console.log("am  udpated clicked");
-        updateProduct.removeEventListener("click", updateProducts);
+        // updateProduct.removeEventListener("click", updateProducts);
     }
     adminContainer.appendChild(updateProduct);
     // document.getElementsByTagName("body")[0].insertBefore(logout, addProduct);
@@ -410,6 +513,9 @@ function removeProduct(response, form) {
 
         // Create an input element for name of book
         let rprodId = document.createElement("input");
+        let rprodIdlabel = document.createElement('label');
+        rprodIdlabel.append('Enter ProductID to Delete:');
+        rprodIdlabel.setAttribute("for", "rprodId");
         rprodId.setAttribute("type", "text");
         rprodId.setAttribute("name", "rprodId");
         rprodId.setAttribute("placeholder", "Product ID");
@@ -471,14 +577,35 @@ function removeProduct(response, form) {
 
         // Append the name input to the form
         removeForm.append(rprodId);
+        removeForm.insertBefore(rprodIdlabel, rprodId);
 
         // Append the submit to the form
         removeForm.append(s);
 
         adminContainer.appendChild(removeForm);
+
+
+
+        let o = document.getElementsByTagName("form");
+        let oArr = Array.from(o);
+
+
+        oArr.forEach((item) => {
+            item.parentNode.removeChild(item)
+            console.log(item)
+        })
+        adminContainer.appendChild(removeForm);
+
+        // for (let i = 0; i < o.length; i++) {
+        //     o[i].parentNode.removeChild(o[i])
+        //     console.log(o[i])
+
+        // }
+        // adminContainer.appendChild(removeForm);
+        // document.getElementById('removebookForm').style.display = "block";
         // document.getElementsByTagName("body")[0].appendChild(refresh);
         console.log("am  deleted clicked");
-        removeProduct.removeEventListener("click", removeProducts);
+        // removeProduct.removeEventListener("click", removeProducts);
     }
     adminContainer.appendChild(removeProduct);
     // document.getElementsByTagName("body")[0].insertBefore(logout, addProduct);

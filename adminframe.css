@@ -1,0 +1,274 @@
+/* iframe li {
+            border: 2px solid black;
+        } */
+
+#pass {
+    background-color: rgb(116, 182, 116);
+    text-align: center;
+    letter-spacing: 4px;
+    height: 30px;
+    margin: auto 0;
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+}
+
+#fail {
+    background-color: rgb(216, 44, 44);
+    text-align: center;
+    letter-spacing: 4px;
+    height: 30px;
+    margin: auto 0;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0px;
+}
+
+table,
+td {
+    border: 2px solid rgb(94, 60, 148)
+}
+
+iframe {
+    position: relative;
+    bottom: 0px;
+    left: 0px;
+    width: 99vw;
+    border: 2px solid orange;
+    height: 700px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form input {
+    width: 50%;
+    border: 2px solid black;
+    height: 25px;
+    margin: 10px;
+}
+
+form input[type="submit"] {
+    cursor: pointer;
+    font-size: 16px;
+    letter-spacing: 2px;
+    font-weight: 400 !important;
+    background-color: #e63946ff;
+    color: #fff;
+    /* padding: 23px 50px; */
+    text-align: center;
+    display: inline-block !important;
+    text-decoration: none;
+    border: 2px solid black;
+    width: max-content;
+    cursor: pointer;
+    /* transition: all 0.3s 0s ease-in-out; */
+    border-radius: 50px;
+    box-shadow: 0 9px #999;
+    background-color: rgb(96, 141, 177);
+    width: 20%;
+    position: relative;
+    left: 15%;
+    margin: 15px;
+}
+
+#userBox {
+    display: inline-block;
+    /* flex-direction: row; */
+    background-color: rgb(202, 182, 156);
+    /* overflow: hidden; */
+    /* height: max-content; */
+    padding: 20px;
+}
+
+#orderBox {
+    /* display: flex;
+            flex-direction: row; */
+    background-color: rgb(221, 153, 221);
+    /* display: inline-block; */
+    height: 400px;
+    padding: 10px;
+}
+
+#adminBox {
+    /* display: flex;
+            flex-direction: row; */
+    background-color: rgb(156, 202, 156);
+    /* display: inline-block; */
+    /* width: 50%; */
+    padding: 20px;
+    height: 63vh;
+}
+
+button {
+    font-size: 13px;
+    letter-spacing: 2px;
+    font-weight: 400 !important;
+    background-color: #e63946ff;
+    color: #fff;
+    padding: 10px 20px;
+    margin: auto;
+    text-align: center;
+    display: inline-block !important;
+    text-decoration: none;
+    border: 2px solid black;
+    width: max-content;
+    cursor: pointer;
+    /* transition: all 0.3s 0s ease-in-out; */
+    border-radius: 50px;
+    box-shadow: 0 9px #999;
+}
+
+button:hover {
+    /* transform: scale(1.04, 1); */
+    background-color: rgb(216, 10, 27);
+    text-decoration: none;
+}
+
+button:active {
+    background-color: #770832;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+button#createOrderBtn,
+button#AddUser,
+button#addNewBook {
+    font-size: 13px;
+    letter-spacing: 2px;
+    font-weight: 400 !important;
+    background-color: #4CAF50 !important;
+    color: #fff;
+    padding: 10px 20px;
+    margin: auto;
+    text-align: center;
+    display: inline-block !important;
+    text-decoration: none;
+    border: 2px solid black;
+    width: max-content;
+    cursor: pointer;
+    /* transition: all 0.3s 0s ease-in-out; */
+}
+
+button#createOrderBtn:hover,
+button#AddUser:hover,
+button#addNewBook:hover {
+    background-color: #3e8e41 !important;
+}
+
+button#refreshOrders {
+    font-size: 13px;
+    letter-spacing: 2px;
+    font-weight: 400 !important;
+    background-color: rgb(82, 67, 168) !important;
+    color: #fff;
+    padding: 10px 20px;
+    margin: auto;
+    text-align: center;
+    display: inline-block !important;
+    text-decoration: none;
+    border: 2px solid black;
+    width: max-content;
+    cursor: pointer;
+    /* transition: all 0.3s 0s ease-in-out; */
+}
+
+form#newOrderFomr {
+    width: 50%;
+    position: relative;
+    top: -17px;
+    left: 31%;
+}
+
+form#removeorderForm {
+    position: relative;
+    top: -2px;
+    width: 50%;
+    left: 31%;
+}
+
+button#deleteOrderBtn {
+    position: relative;
+    top: 263px;
+    width: 13%;
+    left: -13%;
+}
+
+button#createOrderBtn {
+    transform: translateY(72px);
+}
+
+button#deleteUserBtn {
+    position: relative;
+    left: 40%;
+    top: -1px;
+    padding: 10px 20px !important;
+}
+
+form#addUserForm {
+    width: 60%;
+    transform: translatey(26px);
+}
+
+form#addUserForm label {
+    transform: translateX(10px);
+    font-weight: bolder;
+    text-transform: capitalize;
+}
+
+form#removeuserForm {
+    width: 60%;
+    transform: translatey(10px);
+    transform: translateX(80%);
+    position: relative;
+    top: -342px;
+}
+
+form#removeuserForm label {
+    transform: translateX(10px);
+    width: 53%;
+    font-weight: bolder;
+    text-transform: capitalize;
+}
+
+
+/* form#updateForm {
+    width: 50%;
+    transform: translate(60%, 61%) !important;
+}
+
+form#removebookForm {
+    width: 50%;
+    transform: translate(60%, 443%) !important;
+}
+
+form.newBookForm {
+    width: 50%;
+    transform: translate(60%, -153%) !important;
+} */
+
+button#refreshOrders {
+    position: absolute;
+    right: 35px;
+}
+
+form#adminForm {
+    width: 50%;
+    transform: translateX(68%);
+}
+
+button#addNewBook {
+    transform: translate(30%, 230%);
+}
+
+button#updateBook {
+    transform: translate(-63%, 950%);
+}
+
+button#removeBook {
+    transform: translate(-165%, 1521%);
+}

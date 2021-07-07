@@ -6,6 +6,7 @@ let bookContainer = document.getElementById("content");
 let iframe = document.getElementById("myFrame");
 let adminIframe = document.getElementById("adminIframe");
 let refresh = document.getElementById("refresh");
+let adminLogout = document.getElementById("adminLogout");
 
 
 
@@ -15,12 +16,16 @@ let refresh = document.getElementById("refresh");
 // let adminLogoutBtn = document.getElementById("adminLogout");
 
 adminIframe.style.display = "none";
+adminLogout.style.display = "none";
 // logging admin in appending iframe
 function adminlogin() {
     adminIframe.style.display = "block";
+    adminLogout.style.display = "block";
 }
 // logging out admin
 function adminloggedOut() {
+    adminLogout.style.display = "none";
+
     localStorage.removeItem("jwt");
     adminIframe.contentWindow.location.reload();
     adminIframe.style.display = "none";

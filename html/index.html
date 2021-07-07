@@ -43,6 +43,13 @@
             top: 0px;
             left: 0px;
         }
+        
+        div#stickyFrame {
+            position: -webkit-sticky;
+            /* Safari */
+            position: sticky;
+            top: 0;
+        }
     </style>
 </head>
 
@@ -52,7 +59,10 @@
     <!-- <button on>products</button> -->
     <button id="adminLogin" onclick="adminlogin()">Admin Login</button>
     <button id="adminLogout" onclick="adminloggedOut()">Admin Logout</button>
-    <iframe id="adminIframe" style="width: 100%; height: 1200px;" src="./adminIframe.html"></iframe>
+    <div id="stickyFrame">
+
+        <iframe id="adminIframe" style="width: 100%; height: 1200px;" src="./adminIframe.html"></iframe>
+    </div>
     <!-- <button id="getProd">get product</button> -->
     <!-- <button id="btn">fetch all products</button> -->
     <!-- <div class="container">

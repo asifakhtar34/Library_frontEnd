@@ -7,7 +7,7 @@ console.log("hello")
 
 
 // creating create order button
-let createOrderBtn = document.createElement("button");
+let createOrderBtn = document.createElement("button"); // createOrder button
 createOrderBtn.append("Create New Order")
 createOrderBtn.setAttribute("id", "createOrderBtn");
 
@@ -17,7 +17,7 @@ orderBox.append(createOrderBtn)
 document.getElementsByTagName("body")[0].append(orderBox)
 
 // creating  order delete button
-let deleteOrderBtn = document.createElement("button");
+let deleteOrderBtn = document.createElement("button"); // deleteorder button
 deleteOrderBtn.append("Delete Order")
 deleteOrderBtn.setAttribute("id", "deleteOrderBtn");
 
@@ -28,7 +28,7 @@ document.getElementsByTagName("body")[0].append(orderBox)
 
 
 // creating  user add button
-let AddUserBtn = document.createElement("button");
+let AddUserBtn = document.createElement("button"); // Add user button
 AddUserBtn.append("Add New user")
 AddUserBtn.setAttribute("id", "AddUser");
 
@@ -38,7 +38,7 @@ userBox.append(AddUserBtn)
 document.getElementsByTagName("body")[0].append(userBox)
 
 // creating  user delete button
-let deleteUserBtn = document.createElement("button");
+let deleteUserBtn = document.createElement("button"); // delete user button
 deleteUserBtn.append("Delete User")
 deleteUserBtn.setAttribute("id", "deleteUserBtn");
 
@@ -52,6 +52,14 @@ document.getElementsByTagName("body")[0].append(userBox)
 
 
 function addNewOrder() {
+
+    let addorderBUTTON = document.getElementById('createOrderBtn');
+    addorderBUTTON.style.display = 'block';
+    if (document.getElementById('deleteOrderBtn')) {
+        document.getElementById('deleteOrderBtn').style.display = 'none';
+    }
+
+
     let orderForm = document.createElement("form");
     orderForm.setAttribute("method", "post");
     orderForm.setAttribute("action", "#");
@@ -59,6 +67,9 @@ function addNewOrder() {
 
     // Create an input element for productID
     let productID = document.createElement("input");
+    let productIDlabel = document.createElement('label');
+    productIDlabel.append('Enter ProductID:');
+    productIDlabel.setAttribute("for", "productID");
     productID.setAttribute("type", "text");
     productID.setAttribute("name", "productID");
     productID.setAttribute("placeholder", "productID");
@@ -67,6 +78,9 @@ function addNewOrder() {
 
     // Create an input element for UserID
     let userID = document.createElement("input");
+    let userIDlabel = document.createElement('label');
+    userIDlabel.append('Enter UserID:');
+    userIDlabel.setAttribute("for", "userID");
     userID.setAttribute("type", "text");
     userID.setAttribute("name", "userID");
     userID.setAttribute("placeholder", "userID");
@@ -134,9 +148,11 @@ function addNewOrder() {
 
     // Append the name input to the form
     orderForm.append(productID);
+    orderForm.insertBefore(productIDlabel, productID);
 
     // Append the price to the form
     orderForm.append(userID);
+    orderForm.insertBefore(userIDlabel, userID);
 
 
 
@@ -154,6 +170,14 @@ function addNewOrder() {
 // delete order form
 
 function removeOrder() {
+
+    document.getElementById('deleteOrderBtn').style.display = 'block';
+
+    if (document.getElementById('createOrderBtn')) {
+        document.getElementById('createOrderBtn').style.display = 'none';
+    }
+
+
     let removeorderForm = document.createElement("form");
     removeorderForm.setAttribute("method", "delete");
     removeorderForm.setAttribute("action", "#");
@@ -161,6 +185,9 @@ function removeOrder() {
 
     // Create an input element for orderId
     let orderID = document.createElement("input");
+    let orderIDlabel = document.createElement('label');
+    orderIDlabel.append('Enter OrderID:');
+    orderIDlabel.setAttribute("for", "orderID");
     orderID.setAttribute("type", "text");
     orderID.setAttribute("name", "orderID");
     orderID.setAttribute("placeholder", "Enter OrderId to be Deleted");
@@ -222,6 +249,7 @@ function removeOrder() {
 
     // Append the OrderId input to the form
     removeorderForm.append(orderID);
+    removeorderForm.insertBefore(orderIDlabel, orderID);
 
     // Append the submit to the form
     removeorderForm.append(s);
@@ -367,7 +395,7 @@ function addUser() {
                 addUserForm.reset();
 
                 // prodBtn.addEventListener("click", fetchProducts);
-            } else if (this.status) {
+            } else if (this.status == 500) {
                 let p = document.createElement("p");
                 p.setAttribute("id", "fail");
                 console.log(JSON.parse(this.responseText).error._message)
@@ -434,7 +462,7 @@ function deleteUser() {
     // Create an input element for orderId
     let userID = document.createElement("input");
     let Ulabel = document.createElement('label');
-    Ulabel.append('Enter UserId:');
+    Ulabel.append('Enter UserId(Before Removing user check if there are any orders pending):');
     Ulabel.setAttribute("for", "userID");
     userID.setAttribute("type", "text");
     userID.setAttribute("name", "userID");
@@ -476,7 +504,7 @@ function deleteUser() {
         xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
         xhr.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
+            if (this.readyState == 4 && this.status == 202) {
                 console.log("hello");
                 console.log(JSON.parse(this.responseText).message);
                 let p = document.createElement("p");
@@ -490,6 +518,17 @@ function deleteUser() {
                 removeuserForm.reset();
 
                 // prodBtn.addEventListener("click", fetchProducts);
+            } else if (this.status == 500) {
+                let p = document.createElement("p");
+                p.setAttribute("id", "fail");
+                p.append("No Such User Present");
+                removeuserForm.appendChild(p);
+                setTimeout(() => {
+                    removeuserForm.removeChild(p);
+                }, 2000);
+
+                removeuserForm.reset();
+
             }
         };
         xhr.send(`id=${userID.value}&token=${token}`);
