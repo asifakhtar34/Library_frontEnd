@@ -8,6 +8,7 @@ OIframe.setAttribute('src', "./adminOrdersIframe.html");
 //creaying a separate div to contain all the admin functionality
 let adminContainer = document.createElement("div");
 adminContainer.setAttribute("id", "adminBox");
+document.getElementsByTagName("body")[0].appendChild(adminContainer);
 
 // order container
 let orderContainer = document.createElement("div");
@@ -387,8 +388,8 @@ function updateProduct(response, form) {
         // Create an input element for password
         let newValue = document.createElement("input");
         let newValuelabel = document.createElement('label');
-        newValue.append('Enter New Value:');
-        newValue.setAttribute("for", "newValue");
+        newValuelabel.append('Enter New Value:');
+        newValuelabel.setAttribute("for", "newValue");
         newValue.setAttribute("type", "text");
         newValue.setAttribute("name", "newValue");
         newValue.setAttribute("placeholder", "New value");

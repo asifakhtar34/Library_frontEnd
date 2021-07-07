@@ -53,11 +53,11 @@ document.getElementsByTagName("body")[0].append(userBox)
 
 function addNewOrder() {
 
-    let addorderBUTTON = document.getElementById('createOrderBtn');
-    addorderBUTTON.style.display = 'block';
-    if (document.getElementById('deleteOrderBtn')) {
-        document.getElementById('deleteOrderBtn').style.display = 'none';
-    }
+    // let addorderBUTTON = document.getElementById('createOrderBtn');
+    // addorderBUTTON.style.display = 'block';
+    // if (document.getElementById('deleteOrderBtn')) {
+    //     document.getElementById('deleteOrderBtn').style.display = 'none';
+    // }
 
 
     let orderForm = document.createElement("form");
@@ -160,9 +160,20 @@ function addNewOrder() {
     orderForm.append(s);
 
     orderBox.appendChild(orderForm);
+
+    let o = document.getElementsByTagName("form");
+    let oArr = Array.from(o);
+
+
+    oArr.forEach((item) => {
+        item.parentNode.removeChild(item)
+        console.log(item)
+    })
+
+    orderBox.appendChild(orderForm);
     // adminContainer.appendChild(refresh);
     console.log("am ordered");
-    createOrderBtn.removeEventListener("click", addNewOrder);
+    // createOrderBtn.removeEventListener("click", addNewOrder);
 }
 
 
@@ -171,11 +182,11 @@ function addNewOrder() {
 
 function removeOrder() {
 
-    document.getElementById('deleteOrderBtn').style.display = 'block';
+    // document.getElementById('deleteOrderBtn').style.display = 'block';
 
-    if (document.getElementById('createOrderBtn')) {
-        document.getElementById('createOrderBtn').style.display = 'none';
-    }
+    // if (document.getElementById('createOrderBtn')) {
+    //     document.getElementById('createOrderBtn').style.display = 'none';
+    // }
 
 
     let removeorderForm = document.createElement("form");
@@ -255,9 +266,20 @@ function removeOrder() {
     removeorderForm.append(s);
 
     orderBox.appendChild(removeorderForm);
+
+    let o = document.getElementsByTagName("form");
+    let oArr = Array.from(o);
+
+
+    oArr.forEach((item) => {
+        item.parentNode.removeChild(item)
+        console.log(item)
+    })
+
+    orderBox.appendChild(removeorderForm);
     // document.getElementsByTagName("body")[0].appendChild(refresh);
     console.log("am  deleted clicked");
-    deleteOrderBtn.removeEventListener("click", removeOrder);
+    // deleteOrderBtn.removeEventListener("click", removeOrder);
 }
 
 
@@ -443,10 +465,21 @@ function addUser() {
     addUserForm.append(s);
 
     userBox.appendChild(addUserForm);
+
+    let o = document.getElementsByTagName("form");
+    let oArr = Array.from(o);
+
+
+    oArr.forEach((item) => {
+        item.parentNode.removeChild(item)
+        console.log(item)
+    })
+
+    userBox.appendChild(addUserForm);
     // adminContainer.appendChild(refresh);
     console.log("user added");
 
-    AddUserBtn.removeEventListener("click", addUser);
+    // AddUserBtn.removeEventListener("click", addUser);
 
 }
 
@@ -542,7 +575,18 @@ function deleteUser() {
     removeuserForm.append(s);
 
     userBox.appendChild(removeuserForm);
+
+    let o = document.getElementsByTagName("form");
+    let oArr = Array.from(o);
+
+
+    oArr.forEach((item) => {
+        item.parentNode.removeChild(item)
+        console.log(item)
+    })
+
+    userBox.appendChild(removeuserForm);
     // document.getElementsByTagName("body")[0].appendChild(refresh);
     console.log("am  deleted clicked");
-    deleteUserBtn.removeEventListener("click", deleteUser);
+    // deleteUserBtn.removeEventListener("click", deleteUser);
 }

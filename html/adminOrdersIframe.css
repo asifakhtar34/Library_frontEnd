@@ -1,0 +1,52 @@
+html {
+    scroll-behavior: smooth;
+}
+
+table {
+    width: 50vw;
+    background-color: #85FFBD;
+    background-image: linear-gradient(45deg, #85FFBD 0%, #FFFB7D 100%);
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border: 2px solid black;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+td {
+    border: 2px solid rgb(94, 60, 148);
+    font-size: 15px;
+}
+
+#userHead td {
+    border: 2px solid rgb(124, 44, 71);
+}
+
+.btn-grad {
+    background-image: linear-gradient(to right, #1D976C 0%, #93F9B9 51%, #1D976C 100%)
+}
+
+.btn-grad {
+    margin: 10px;
+    padding: 15px 45px;
+    text-align: center;
+    text-transform: capitalize;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: rgb(12, 12, 12);
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    display: block;
+    cursor: default;
+}
+
+.btn-grad:hover {
+    background-position: right center;
+    /* change the direction of the change here */
+    color: rgb(43, 41, 41);
+    text-decoration: none;
+}
+
+.btn-grad p {
+    font-size: 25px;
+}
