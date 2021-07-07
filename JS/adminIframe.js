@@ -1,7 +1,7 @@
 let refresh = document.getElementById("refresh");
-let OIframe = document.createElement('iframe');
-OIframe.setAttribute('id', 'orderIframe');
-OIframe.setAttribute('src', "./adminOrdersIframe.html");
+let OIframe = document.createElement("iframe");
+OIframe.setAttribute("id", "orderIframe");
+OIframe.setAttribute("src", "./adminOrdersIframe.html");
 // let orderIframe = document.getElementById("orderIframe");
 // orderIframe.style.display = "none";
 
@@ -36,12 +36,6 @@ addNewBookContainer.setAttribute("id", "ubc");
 let removeBookContainer = document.createElement("div");
 addNewBookContainer.setAttribute("id", "rbc");
 
-
-
-
-
-
-
 // creating admin logged-in page
 // let adminLogin = document.getElementById("adminLogin");
 
@@ -56,8 +50,8 @@ window.onload = function adminFunc() {
 
     // Create an input element for emailID
     let ID = document.createElement("input");
-    let idLabel = document.createElement('label');
-    idLabel.append('Enter Email:');
+    let idLabel = document.createElement("label");
+    idLabel.append("Enter Email:");
     idLabel.setAttribute("for", "email");
 
     ID.setAttribute("type", "email");
@@ -67,8 +61,8 @@ window.onload = function adminFunc() {
 
     // Create an input element for password
     let PWD = document.createElement("input");
-    let pwdLabel = document.createElement('label');
-    pwdLabel.append('Enter Password:');
+    let pwdLabel = document.createElement("label");
+    pwdLabel.append("Enter Password:");
     pwdLabel.setAttribute("for", "password");
     PWD.setAttribute("type", "password");
     PWD.setAttribute("name", "password");
@@ -124,18 +118,11 @@ window.onload = function adminFunc() {
                 //adding orderBOx after suucess loggin
                 // order container
 
-
-
                 //after success login show order container
                 orderContainer.style.display = "block";
 
-
                 //after success login show user container
                 userContainer.style.display = "block";
-
-
-
-
 
                 // document.getElementsByTagName("body")[0].appendChild(p);
                 // calling to addproduct
@@ -151,8 +138,6 @@ window.onload = function adminFunc() {
 
                 //refresh ordersList
                 resfreshOrders();
-
-
             } else if (this.readyState == 4 && this.status == 401) {
                 console.log(this.responseText);
                 let failed = JSON.parse(this.responseText);
@@ -173,12 +158,11 @@ window.onload = function adminFunc() {
 
     // Append the email_ID input to the form
     form.append(ID);
-    form.insertBefore(idLabel, ID)
+    form.insertBefore(idLabel, ID);
 
     // Append the password to the form
     form.append(PWD);
-    form.insertBefore(pwdLabel, PWD)
-
+    form.insertBefore(pwdLabel, PWD);
 
     // Append the button to the form
     form.append(s);
@@ -188,7 +172,7 @@ window.onload = function adminFunc() {
     //appenidng the admin container to the body
     document.getElementsByTagName("body")[0].appendChild(adminContainer);
     // adminContainer.appendChild(logout);
-}
+};
 
 //called when admin is sucessfully logged in
 
@@ -204,10 +188,6 @@ function addNewProduct(response, form) {
     function addProducts() {
         // this.style.display = "block"
 
-
-
-
-
         let productform = document.createElement("form");
         productform.setAttribute("method", "post");
         productform.setAttribute("action", "#");
@@ -215,8 +195,8 @@ function addNewProduct(response, form) {
 
         // Create an input element for name of book
         let name = document.createElement("input");
-        let namelabel = document.createElement('label');
-        namelabel.append('Enter Book Name:');
+        let namelabel = document.createElement("label");
+        namelabel.append("Enter Book Name:");
         namelabel.setAttribute("for", "name");
         name.setAttribute("type", "text");
         name.setAttribute("name", "name");
@@ -226,8 +206,8 @@ function addNewProduct(response, form) {
 
         // Create an input element for price
         let price = document.createElement("input");
-        let pricelabel = document.createElement('label');
-        pricelabel.append('Enter Book Price:');
+        let pricelabel = document.createElement("label");
+        pricelabel.append("Enter Book Price:");
         pricelabel.setAttribute("for", "price");
         price.setAttribute("type", "number");
         price.setAttribute("name", "price");
@@ -236,8 +216,8 @@ function addNewProduct(response, form) {
 
         // Create an input element for password
         let author = document.createElement("input");
-        let authorlabel = document.createElement('label');
-        authorlabel.append('Enter Author:');
+        let authorlabel = document.createElement("label");
+        authorlabel.append("Enter Author:");
         authorlabel.setAttribute("for", "author");
         author.setAttribute("type", "text");
         author.setAttribute("name", "author");
@@ -321,14 +301,11 @@ function addNewProduct(response, form) {
         let o = document.getElementsByTagName("form");
         let oArr = Array.from(o);
 
-
         oArr.forEach((item) => {
-            item.parentNode.removeChild(item)
-            console.log(item)
-        })
+            item.parentNode.removeChild(item);
+            console.log(item);
+        });
         adminContainer.appendChild(productform);
-
-
 
         // let o = document.getElementsByTagName("form");
 
@@ -338,9 +315,6 @@ function addNewProduct(response, form) {
         // }
 
         // document.getElementById('newBookForm').style.display = "block";
-
-
-
 
         // adminContainer.appendChild(refresh);
         console.log("am clicked");
@@ -366,8 +340,8 @@ function updateProduct(response, form) {
 
         // Create an input element for name of book
         let prodId = document.createElement("input");
-        let prodIdlabel = document.createElement('label');
-        prodIdlabel.append('Enter ProductID:');
+        let prodIdlabel = document.createElement("label");
+        prodIdlabel.append("Enter ProductID:");
         prodIdlabel.setAttribute("for", "prodId");
         prodId.setAttribute("type", "text");
         prodId.setAttribute("name", "prodId");
@@ -377,8 +351,8 @@ function updateProduct(response, form) {
 
         // Create an input element for price
         let property = document.createElement("input");
-        let propertylabel = document.createElement('label');
-        propertylabel.append('What to change?:');
+        let propertylabel = document.createElement("label");
+        propertylabel.append("What to change?:");
         propertylabel.setAttribute("for", "property");
         property.setAttribute("type", "text");
         property.setAttribute("name", "property");
@@ -387,8 +361,8 @@ function updateProduct(response, form) {
 
         // Create an input element for password
         let newValue = document.createElement("input");
-        let newValuelabel = document.createElement('label');
-        newValuelabel.append('Enter New Value:');
+        let newValuelabel = document.createElement("label");
+        newValuelabel.append("Enter New Value:");
         newValuelabel.setAttribute("for", "newValue");
         newValue.setAttribute("type", "text");
         newValue.setAttribute("name", "newValue");
@@ -471,11 +445,10 @@ function updateProduct(response, form) {
         let o = document.getElementsByTagName("form");
         let oArr = Array.from(o);
 
-
         oArr.forEach((item) => {
-            item.parentNode.removeChild(item)
-            console.log(item)
-        })
+            item.parentNode.removeChild(item);
+            console.log(item);
+        });
 
         adminContainer.appendChild(updateForm);
 
@@ -487,7 +460,6 @@ function updateProduct(response, form) {
         // }
 
         // document.getElementById('updateForm').style.display = "block";
-
 
         // document.getElementsByTagName("body")[0].appendChild(refresh);
         console.log("am  udpated clicked");
@@ -514,8 +486,8 @@ function removeProduct(response, form) {
 
         // Create an input element for name of book
         let rprodId = document.createElement("input");
-        let rprodIdlabel = document.createElement('label');
-        rprodIdlabel.append('Enter ProductID to Delete:');
+        let rprodIdlabel = document.createElement("label");
+        rprodIdlabel.append("Enter ProductID to Delete:");
         rprodIdlabel.setAttribute("for", "rprodId");
         rprodId.setAttribute("type", "text");
         rprodId.setAttribute("name", "rprodId");
@@ -585,16 +557,13 @@ function removeProduct(response, form) {
 
         adminContainer.appendChild(removeForm);
 
-
-
         let o = document.getElementsByTagName("form");
         let oArr = Array.from(o);
 
-
         oArr.forEach((item) => {
-            item.parentNode.removeChild(item)
-            console.log(item)
-        })
+            item.parentNode.removeChild(item);
+            console.log(item);
+        });
         adminContainer.appendChild(removeForm);
 
         // for (let i = 0; i < o.length; i++) {
@@ -612,7 +581,7 @@ function removeProduct(response, form) {
     // document.getElementsByTagName("body")[0].insertBefore(logout, addProduct);
 }
 
-// delete below 
+// delete below
 
 //fetching all orders
 
@@ -626,8 +595,6 @@ function removeProduct(response, form) {
 
 //     function showAllOrders() {
 //         console.log("showorders")
-
-
 
 //         // document.getElementsByTagName("body")[0].removeChild(orderContainer);
 
@@ -668,13 +635,10 @@ function removeProduct(response, form) {
 //                 h7.innerHTML = "Mobile";
 //                 h8.innerHTML = "Quantity";
 
-
-
-//                 //looping through the 
+//                 //looping through the
 //                 ordersArr.forEach((item) => {
 
 //                 })
-
 
 //                 orderContainer.appendChild(ordersTable);
 //                 // showOrders.removeEventListener("click", showAllOrders);
@@ -697,12 +661,9 @@ function resfreshOrders() {
     refreshOrdersPage.append("Refresh Orders/Users");
     refreshOrdersPage.setAttribute("id", "refreshOrders");
     refreshOrdersPage.addEventListener("click", () => {
-
         OIframe.contentWindow.location.reload();
     });
     adminContainer.appendChild(refreshOrdersPage);
-
-
 }
 // function resfreshOrders() {
 //     let refreshOrdersPage = document.createElement("button");
@@ -713,6 +674,5 @@ function resfreshOrders() {
 //         OIframe.contentWindow.location.reload();
 //     });
 //     adminContainer.appendChild(refreshOrdersPage);
-
 
 // }
