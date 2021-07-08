@@ -40,7 +40,7 @@ iframe {
     bottom: 0px;
     left: 0px;
     width: 99vw;
-    border: 2px solid orange;
+    /* border: 2px solid orange; */
     height: 700px;
 }
 
@@ -130,7 +130,7 @@ button {
     background-color: #e63946ff;
     color: #fff;
     padding: 10px 20px;
-    margin: auto;
+    margin: 5px;
     text-align: center;
     display: inline-block !important;
     text-decoration: none;

@@ -10,9 +10,18 @@
 .topNav {
     /* border: 2px solid green; */
     display: flex;
-    color: white;
+    color: white !important;
     width: auto;
     box-sizing: content-box;
+}
+
+.topNav p {
+    color: white !important;
+}
+
+.topNav p:hover {
+    color: rgb(199, 75, 182) !important;
+    /* font-size: 20px; */
 }
 
 .topNav .navP {
@@ -28,9 +37,9 @@
 
 .call:hover,
 .email:hover,
-.login:hover,
-.register:hover,
-.adminLogin:hover,
+.login a:hover,
+.register :hover,
+.adminLogin a:hover,
 .navTabs li:hover {
     color: tomato;
 }
@@ -101,3 +110,9 @@
     color: tomato;
     background-color: rgb(128, 125, 125);
 }
+
+
+/* 
+p#userLogin:hover {
+    color: brown;
+} */

@@ -121,7 +121,7 @@ window.onload = function adminFunc() {
                 logotuBtn.addEventListener("click", userLogout);
 
                 function userLogout() {
-                    localStorage.removeItem('Ujwt');
+                    localStorage.removeItem('jwt');
                     window.history.back();
                 }
 

@@ -1,3 +1,27 @@
+//back to top
+//Get the button
+let mybutton = document.getElementById("myBtn");
+mybutton.style.display = "none";
+
+// When the user scrolls down 20px from the top of the document, show the button
+
+
+window.onscroll = function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+    } else {
+        mybutton.style.display = "none";
+    }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
+
+
+
 var slideIndex = 1;
 showSlides(slideIndex);
 
@@ -25,54 +49,10 @@ function showSlides(n) {
     dots[slideIndex - 1].className += " active";
 }
 
-// let adminIframe = document.getElementById('adminIframe');
-// let adminLoginBtn = document.getElementById('adminLogin');
+//product refresh
 
-// adminLoginBtn.addEventListener('click', adminlogin)
+let iframe = document.getElementById("myFrame");
 
-// //admin controls
-
-// adminIframe.style.display = "none";
-// // adminLogout.style.display = "none";
-
-// function adminlogin() {
-//     userIframe.style.display = "none";
-//     adminIframe.style.display = "block";
-//     // adminLogout.style.display = "block";
-// }
-// logging out admin
-// function adminloggedOut() {
-//     adminLogout.style.display = "none";
-
-//     localStorage.removeItem("jwt");
-//     adminIframe.contentWindow.location.reload();
-//     adminIframe.style.display = "none";
-//     let p = document.createElement("p");
-//     p.setAttribute("id", "pass");
-//     p.append("Admin Logged Out");
-//     document.getElementsByTagName("body")[0].appendChild(p)
-//     setTimeout(() => {
-//         document.getElementsByTagName("body")[0].removeChild(p)
-//     }, 2000);
-
-// }
-
-//
-
-
-// user controls
-
-// let userIframe = document.getElementById('userIframe');
-
-// userIframe.style.display = "none";
-
-// let userLoginBtn = document.getElementById('userLogin');
-
-// userLoginBtn.addEventListener('click', userlogin)
-
-// function userlogin() {
-//     console.log('hi')
-//     adminIframe.style.display = "none";
-//     userIframe.style.display = "block";
-//     // adminLogout.style.display = "block";
-// }
+function refreashIframe() {
+    iframe.contentWindow.location.reload();
+}

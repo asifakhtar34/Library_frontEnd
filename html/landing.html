@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../landing.css">
     <link rel="stylesheet" href="../navbar.css">
+    <link rel="stylesheet" href="../adminframe.css">
+    <link rel="stylesheet" href="../product.css">
 
 </head>
 
@@ -20,19 +22,19 @@
             <div class="mySlides fade">
 
                 <img class="carasoulImg" src="../images/pexels-min-an-694740.jpg">
-                <div class="text ">Caption Text</div>
+                <div class="text ">Many people, myself among them, feel better at the mere sight of a book. -- Jane Smiley</div>
             </div>
 
             <div class="mySlides fade ">
 
                 <img class="carasoulImg" src="../images/pexels-pixabay-207636.jpg ">
-                <div class="text ">Caption Two</div>
+                <div class="text ">“Think before you speak. Read before you think.” - Fran Lebowitz</div>
             </div>
 
             <div class="mySlides fade ">
 
                 <img class="carasoulImg" src="../images/pexels-pixabay-247899.jpg ">
-                <div class="text ">Caption Three</div>
+                <div class="text ">“Today a reader, tomorrow a leader.” - Margaret Fuller</div>
             </div>
 
             <a class="prev " onclick="plusSlides(-1) ">&#10094;</a>
@@ -58,7 +60,7 @@
                 </div>
                 <div class="login"><i class="fa fa-lock" style="font-size:24px"></i>
                     <a href="./user.html">
-                        <p class="navP" id="userLogin"> UserLogin</p>
+                        <p class="navP" class="login" id="userLogin"> UserLogin</p>
                     </a>
                 </div>
                 <!-- <div class="register"><i class="fa fa-id-card-o" style="font-size:24px"></i>
@@ -66,7 +68,7 @@
                 </div> -->
                 <div class="adminLogin"><i class="fa fa-id-card-o" style="font-size:24px"></i>
                     <a href="./adminIframe.html">
-                        <p class="navP" id="adminLogin">Admin Login</p>
+                        <p class="navP" class="adminLogin" id="adminLogin">Admin Login</p>
                     </a>
                 </div>
             </div>
@@ -76,7 +78,7 @@
                     <a href="">
                         <li class=" tab tab1">Home</li>
                     </a>
-                    <a href="">
+                    <a href="#myFrame">
                         <li class=" tab tab2">Books</li>
                     </a>
                     <a href="">
@@ -95,9 +97,142 @@
         <!-- <iframe id="userIframe" style="width: 100%; height: 700px; " src="./user.html"></iframe> -->
     </header>
     <main class="main ">
+        <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+        <section class="libDesc">
+            <div class="libImg"><img src="../images/glossary/pexels-pixabay-256431.jpg" alt=""></div>
+            <div class="desc">
+                <p>The library is a blended academic and social space, where users are empowered to connect with information and each other. Along with the philosophy of a liberal arts education, the library on such a campus, promotes a search for knowledge
+                    conducted with a spirit of free inquiry to best prepare an individual inside and outside of the classroom for the adventures of life. The Musselman Library is a space built for all users’ needs, whether they are academic, social, recreational,
+                    personal, and relaxation. Two floors are wide open and intended for group work, relaxation, and general studying. The noise level is usually at a dull roar. I often see students talking, eating, watching movies, playing games, or just
+                    relaxing. For the other studiers, the upstairs has three floors of quiet space, where students work at desks and study nooks in a noise free zone. The hours are meant to serve the busy lives of students, as the library is open 24 hours
+                    a day throughout the academic week.</p>
+            </div>
+        </section>
+
+        <section class="bookslist">
+            <button id="refresh" onclick="refreashIframe()">Refresh All products</button>
+            <iframe id="myFrame" style="width: 90%; height: 500px;" src="./product.html"></iframe>
+        </section>
+        <section class="staff">
+            <h3>MEET OUR STAFF</h3>
+
+            <div class="staffCont">
+                <div class="staffBox ">
+                    <img src="../images/staff1.jpg" alt="">
+                    <div class="profile">
+                        <p class="name">Emilia Clarke</p>
+                        <p class="post">Executive Director</p>
+                        <p class="aboutstaff">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio, aliquid.</p>
+                    </div>
+                </div>
+                <div class="staffBox">
+                    <div class="profile">
+                        <p class="name">David Brown</p>
+                        <p class="post">Head Librarian</p>
+                        <p class="aboutstaff">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio, aliquid.</p>
+                    </div>
+                    <img src="../images/staff2.jpg" alt="">
+                </div>
+                <div class="staffBox"><img src="../images/staff3.jpg" alt="">
+                    <div class="profile">
+                        <p class="name">Katherin S</p>
+                        <p class="post">Assistant Librarian</p>
+                        <p class="aboutstaff">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio, aliquid.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
 
     </main>
-    <footer class="footer "></footer>
+    <footer class="footer ">
+        <section class="social">
+            <ul class="icons">
+                <li>
+                    <a class="facebook" href="" target="_blank">
+                        <i class="fa fa-facebook"></i>
+                    </a>
+                </li>
+                <li>
+                    <a class="twitter" href="" target="_blank">
+                        <i class="fa fa-twitter"></i>
+                    </a>
+                </li>
+                <li>
+                    <a class="google" href="" target="_blank">
+                        <i class="fa fa-google-plus"></i>
+                    </a>
+                </li>
+                <li>
+                    <a class="rss" href="" target="_blank">
+                        <i class="fa fa-rss"></i>
+                    </a>
+                </li>
+                <li>
+                    <a class="linkedin" href="" target="_blank">
+                        <i class="fa fa-linkedin"></i>
+                    </a>
+                </li>
+                <li>
+                    <a class="youtube" href="" target="_blank">
+                        <i class="fa fa-youtube"></i>
+                    </a>
+                </li>
+            </ul>
+        </section>
+        <section class="mainFooter">
+
+            <div class="content">
+                <div class="top">
+                    <div class="logo-details">
+                        <div class="logo"><img src="../images/logo/logo-removebg-preview.png" alt="" width="180px" height="80px"></div>
+                    </div>
+
+                </div>
+                <div class="link-boxes">
+                    <ul class="box">
+                        <li class="link_name">Bright-Minds</li>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Contact us</a></li>
+                        <li><a href="#">About us</a></li>
+                        <li><a href="#">Get started</a></li>
+                    </ul>
+                    <ul class="box" id="timings">
+                        <li class="link_name">Timings</li>
+                        <li><a href="#">Mon to Fri: 9 AM to 6PM</a></li>
+                        <li><a href="#">Sat: 12PM to 9PM</a></li>
+                        <li><a href="#">SUNDAY HOLIDAY</a></li>
+                        <!-- <li><a href="#"></a></li> -->
+                    </ul>
+                    <ul class="box">
+                        <li class="link_name">Account</li>
+                        <li><a href="#">Profile</a></li>
+                        <li><a href="./user.html">My account</a></li>
+                        <li><a href="#">Prefrences</a></li>
+                        <li><a href="./adminIframe.html">ADMIN LOGIN</a></li>
+                    </ul>
+
+                    <ul class="box input-box">
+                        <li class="link_name">Subscribe</li>
+                        <li><input type="text" placeholder="Enter your email"></li>
+                        <li><input type="button" value="Subscribe"></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="bottom-details">
+                <div class="bottom_text">
+                    <span class="copyright_text">Copyright © 2021 <a href="#">Logo.</a>All rights reserved</span>
+                    <span class="policy_terms">
+                      <a href="#">Privacy policy</a>
+                      <a href="#">Terms & condition</a>
+                    </span>
+                </div>
+            </div>
+
+
+        </section>
+    </footer>
     <script src="../JS/header.js"></script>
 </body>
 
