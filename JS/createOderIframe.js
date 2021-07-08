@@ -428,6 +428,17 @@ function addUser() {
                 }, 2000);
                 addUserForm.reset();
 
+            } else if (this.status == 409) {
+                let p = document.createElement("p");
+                p.setAttribute("id", "fail");
+                console.log(JSON.parse(this.responseText).message)
+                p.append(JSON.parse(this.responseText).message);
+                adminContainer.appendChild(p);
+                setTimeout(() => {
+                    adminContainer.removeChild(p);
+                }, 2000);
+                addUserForm.reset();
+
             }
         };
         xhr.send(

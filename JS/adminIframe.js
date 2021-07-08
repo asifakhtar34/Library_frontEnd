@@ -112,6 +112,19 @@ window.onload = function adminFunc() {
                 }, 2500);
                 form.reset();
 
+                // Logout btn
+                let logotuBtn = document.createElement("button");
+                logotuBtn.append("Logout");
+                logotuBtn.setAttribute("id", "logotuBtn");
+                userContainer.appendChild(logotuBtn);
+
+                logotuBtn.addEventListener("click", userLogout);
+
+                function userLogout() {
+                    localStorage.removeItem('Ujwt');
+                    window.history.back();
+                }
+
                 // appending the iframe after success login
                 document.getElementsByTagName("body")[0].appendChild(OIframe);
 

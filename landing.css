@@ -20,6 +20,11 @@ body {
     height: auto;
 }
 
+.header a {
+    text-decoration: none;
+    color: white;
+}
+
 .mySlides {
     height: 90vh;
     display: none;

@@ -7,19 +7,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Page</title>
     <link rel="stylesheet" href="../adminframe.css">
+    <link rel="stylesheet" href="../product.css">
 
 </head>
 
 <body>
+
+    <button id="refresh" onclick="refreashIframe()">Refresh All products</button>
     <h1>Hello Admin!</h1>
+
+
     <!-- <button id="adminLogin"> Login</button> -->
     <!-- <iframe id="orderIframe" src="./adminOrdersIframe.html" style="width:100%"></iframe> -->
 
     <!-- dynamically creating Iframe -->
 
-
+    <iframe id="myFrame" style="width: 100%; height: 60vh;" src="./product.html"></iframe>
     <script src="../JS/adminIframe.js"></script>
     <script src="../JS/createOderIframe.js"></script>
+    <script src="../JS/control.js"></script>
+
+    <script>
+        function refreashIframe() {
+            document.getElementById("myFrame").contentWindow.location.reload();
+        }
+    </script>
     <!-- <script src="./OrderIframe.js"></script> -->
 </body>
 
