@@ -8,12 +8,33 @@
     <title>User Page</title>
     <link rel="stylesheet" href="../adminframe.css">
     <link rel="stylesheet" href="./adminOrdersIframe.css">
+    <link rel="stylesheet" href="../navbar.css">
+
+    <link rel="stylesheet" href="../product.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        
+        div#userDetailBox {
+            width: 74%;
+            position: relative;
+            left: 16%;
+        }
+    </style>
+
 </head>
 
 <body>
     <h3>USER LOGIN</h3>
+    <button id="refresh" onclick="refreashIframe()">Refresh All products</button>
+    <iframe id="myFrame" style="width: 90%; height: 500px;" src="./product.html"></iframe>
 
     <script src="../JS/user.js"></script>
+    <script src="../JS/header.js"></script>
 </body>
 
 </html>

@@ -3,6 +3,14 @@ let userContainer = document.createElement("div");
 userContainer.setAttribute("id", "userDetailBox");
 document.getElementsByTagName("body")[0].appendChild(userContainer);
 
+//product refresh
+
+let iframe = document.getElementById("myFrame");
+
+function refreashIframe() {
+    iframe.contentWindow.location.reload();
+}
+
 window.onload = function userFunc() {
     // Create a form dynamically
     let form = document.createElement("form");
